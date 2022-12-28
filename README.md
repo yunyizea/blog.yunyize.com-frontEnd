@@ -5,8 +5,8 @@
 ## 介绍
 
 - 这个项目在很久之前我就想做出来了，但是受限于当是的技术力不够，所以一直搁置到现在才开始重构。
-- 倒不是说这个东西有多难做，只是说，想学习新的技术罢了，所以这个项目采用的技术栈有：Webpack、TypeScript、Vue3。
-- 技术栈很简单，环境是 NodeJS，这个项目再怎么说也只是一个练手的项目，通过这个项目来学习新的知识，掌握技术。
+- 倒不是说这个东西有多难做，只是说，想学习新的技术罢了，所以这个项目采用的技术栈有：`Webpack`、`TypeScript`、`Vue3`。
+- 技术栈很简单，环境是 `NodeJS`，这个项目再怎么说也只是一个练手的项目，通过这个项目来学习新的知识，掌握技术。
 
 ---
 
@@ -19,12 +19,12 @@
    ```bash
    git clone https://github.com/yunyizea/blog.yunyize.com.git
    cd blog.yunyize.com
-   npm i
-   npm run build && npm run server
+   yarn
+   yarn run build && yarn run server
    ```
 
 2. 下载编译好的前端文件部署
-   - 打开 GitHub 的[Releases](https://github.com/yunyizea/blog.yunyize.com/releases)页面
+   - 打开 GitHub 的 [Releases](https://github.com/yunyizea/blog.yunyize.com-frontEnd/releases) 页面
    - 下载最新的 dist/web 文件
    - 解压部署到前端服务器上（NGINX/APACHE）
 
