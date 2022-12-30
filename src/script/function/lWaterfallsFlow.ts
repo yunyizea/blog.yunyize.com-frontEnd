@@ -1,5 +1,5 @@
 export default class yunyize_waterfallsFlow {
-    private onDebounce: NodeJS.Timeout | null = null;
+    private onDebounce: NodeJS.Timeout|null = null;
 
     public waterFall(items: Array<HTMLElement>, itemWidth: number, gap: number, father?: HTMLElement) {
         let viewWidth: number = father ? this.getClientInformation(father).width : this.getClientInformation().width;
@@ -35,7 +35,7 @@ export default class yunyize_waterfallsFlow {
                 }
             }
             if (father) {
-                father.style.height = this.__MAX__(minHeightBoxArray) + gap + 'px';
+                father.style.height = this.__MAX__(minHeightBoxArray) + gap +'px';
             }
         }, 100)
     }

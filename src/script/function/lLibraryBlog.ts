@@ -57,8 +57,8 @@ export default class yunyize_blog {
         return loadingElement;
     }
 
-    public loadingAnimation(loadingElement: HTMLElement): HTMLElement {
-        document.querySelector('body > div.container')?.appendChild(loadingElement);
+    public loadingAnimation(containerEle:HTMLElement, loadingElement: HTMLElement): HTMLElement {
+        containerEle.appendChild(loadingElement);
 
         let opacity = 0;
         let render = () => {
@@ -97,6 +97,39 @@ export default class yunyize_blog {
             requestAnimationFrame(render)
         }
         let loadingTimer = requestAnimationFrame(render);
+    }
+
+    public optimizeContainerWidth = (containerPercentage: number, itemWidth: number, itemGap: number, container: HTMLElement): void => {
+        let itemFullWidth: number = itemWidth + itemGap,
+            containerWidth: number = window.innerWidth * containerPercentage
+
+        let row: number = 0;
+
+        if(containerWidth < itemFullWidth) {
+            container.style.width = itemFullWidth + 'px';
+            return;
+        }
+
+        row = Math.floor(containerWidth / itemFullWidth);
+        containerWidth = row * itemFullWidth;
+
+        container.style.width = containerWidth + 'px';
+    }
+
+    public showBlogItem(blogItems: Array<HTMLElement>) {
+        blogItems.forEach((item: HTMLElement) => {
+            let itemOpacity = 0;
+            let fadeInFn = () => {
+                itemOpacity += .05;
+                item.style.opacity = itemOpacity.toString();
+                if(itemOpacity >= 1) {
+                    item.style.opacity = '1';
+                    cancelAnimationFrame(render);
+                }
+                requestAnimationFrame(fadeInFn);
+            }
+            let render = requestAnimationFrame(fadeInFn);
+        })
     }
 
     private logTips(): void {
