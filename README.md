@@ -17,8 +17,8 @@
 1. 使用源码编译部署
 
    ```bash
-   git clone https://github.com/yunyizea/blog.yunyize.com.git
-   cd blog.yunyize.com
+   git clone https://github.com/yunyizea/blog.yunyize.com-frontEnd.git
+   cd blog.yunyize.com-frontEnd
    yarn
    yarn run build && yarn run server
    ```
